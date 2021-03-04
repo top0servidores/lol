@@ -10,3 +10,5 @@ RUN add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable
 
 # Install custom tools, runtime, etc.
 RUN apt install -y opera-stable
+
+USER gitpod
