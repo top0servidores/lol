@@ -1,8 +1,25 @@
 FROM gitpod/workspace-full-vnc
 
+USER gitpod
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Install dependencies
 RUN sudo apt-get update \
-    && sudo apt-get install -y libgtk-3-dev \
-    && sudo apt-get install -y chromium-browser \
-    && snap install chromium \
-    && sudo rm -rf /var/lib/apt/lists/*
+ && sudo apt-get install -yq \
+   libgtk2.0-0 \
+   libgtk-3-0 \
+   libnotify-dev \
+   libgconf-2-4 \
+   libnss3 \
+   libxss1 \
+   libasound2 \
+   libxtst6 \
+   xauth \
+   xvfb \
+ && sudo rm -rf /var/lib/apt/lists/*
+
+
+RUN sudo apt-get update -q \
+ && sudo apt-get install -yq \
+   chromium-browser \
+ && sudo rm -rf /var/lib/apt/lists/*
