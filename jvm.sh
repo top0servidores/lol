@@ -1,1 +1,1 @@
-export JAVA_TOOL_OPTIONS=-Dsun.java2d.xrender=false -Xmx16G
+export JAVA_TOOL_OPTIONS="-Dsun.java2d.opengl=true -Xmx16G"
